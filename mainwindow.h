@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "widget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +18,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void resizeEvent(QResizeEvent *);
+    Top m_top;
+
 };
 #endif // MAINWINDOW_H

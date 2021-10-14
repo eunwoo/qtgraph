@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+//    this->setCentralWidget(&m_top);
 }
 
 MainWindow::~MainWindow()
@@ -13,3 +14,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::resizeEvent(QResizeEvent *)
+{
+    m_top.resize(this->width(), this->height());
+}

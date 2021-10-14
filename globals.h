@@ -8,6 +8,8 @@
 #define EXTERN extern
 #endif
 
+using namespace MY_DATA;
+
 EXTERN WORD wPwmAmp2;
 
 #endif // GLOBALS_H

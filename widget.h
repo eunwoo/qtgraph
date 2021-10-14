@@ -8,8 +8,15 @@
 #include <QPushButton>
 #include <vector>
 
+using namespace MY_DATA;
 
 class Top : public QWidget {
+    enum ALIGN {
+        TOP,
+        BOTTOM,
+        LEFT,
+        RIGHT
+    };
     void paintEvent(QPaintEvent *);
 public:
     Top(QWidget * parent = 0);
@@ -22,7 +29,14 @@ public:
     int vw_to_scr_y(double y);
     void CalcScale();
     void DrawText(QPainter &p, QFont &font, double x, double y, QString sText);
+    void DrawText(QPainter &p, QFont &font, double x, double y, QString sText, ALIGN align);
+    void DrawText2(QPainter &p, QFont &font, int x, int y, QString sText);
+    void SetXLabel(QPainter &p, QFont &font, QString sText);
+    void SetYLabel(QPainter &p, QFont &font, QString sText);
+    void DrawXTick(QPainter &p);
+    void DrawYTick(QPainter &p);
 private:
+    void resizeEvent(QResizeEvent*);
     QPushButton *m_btnRun;
     std::vector<Point<WORD>> data;
     double m_scale, m_scale_w, m_scale_h;

@@ -23,6 +23,8 @@ enum {
     DATA_TYPE_WORD
 };
 
+using namespace MY_DATA;
+#define LONG MY_LONG
 
 void GenerateData(std::vector<Point<WORD>> &data)
 {
